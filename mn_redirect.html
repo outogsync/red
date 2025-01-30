@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarginNote 리디렉션</title>
+    <script>
+        function redirect() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const noteId = urlParams.get("note_id");
+            if (noteId) {
+                window.location.href = "marginnote4app://note/" + noteId;
+            } else {
+                document.body.innerHTML = "<h1>잘못된 URL입니다.</h1>";
+            }
+        }
+        window.onload = redirect;
+    </script>
+</head>
+<body>
+    <h1>MarginNote로 이동 중...</h1>
+</body>
+</html>
